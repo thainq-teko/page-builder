@@ -1,33 +1,38 @@
 import React, { useState, useEffect } from 'reactn';
 import './App.css';
-import SimpleSwiperWithParams from './components/slider'
-import "react-id-swiper/lib/styles/scss/swiper.scss";
-import axios from 'axios'
-
+// eslint-disable-next-line
+import SimpleSwiperWithParams from 'components/SimpleSwiperWithParams';
+import LeftMenu from 'components/Menu';
+import axios from 'axios';
+import 'antd/dist/antd.css';
 
 function App() {
-  const [data, setData] = useState([])
+  // eslint-disable-next-line
+  const [data, setData] = useState([]);
 
   const getData = async () => {
-    const resp = await axios.get('https://phongvu.vn/api-v2/banner/gethomepagebannergroup?position=hp-de-slider-660x390&category=home&version=1')
-    let temp = resp.data.data
-    let array = []
+    const resp = await axios.get(
+      'https://phongvu.vn/api-v2/banner/gethomepagebannergroup?position=hp-de-slider-660x390&category=home&version=1',
+    );
+    let temp = resp.data.data;
+    let array = [];
     temp.forEach(i => {
-      array = array.concat(i.images)
+      array = array.concat(i.images);
     });
-    setData(array)
-  }
+    setData(array);
+  };
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData();
+  }, []);
 
   return (
-    <div className="App">
-      <h1>Header</h1>
-      <br />
+    <div className='App'>
+      <h1>Page builder</h1>
+      {/* <br />
+      <div>{data.length ? <SimpleSwiperWithParams data={data} /> : null}</div> */}
       <div>
-        <SimpleSwiperWithParams data={data} />
+        <LeftMenu />
       </div>
     </div>
   );

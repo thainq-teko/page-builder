@@ -1,10 +1,12 @@
 import React from 'reactn';
 import Swiper from 'react-id-swiper';
+import "react-id-swiper/lib/styles/scss/swiper.scss";
+import "./SimpleSwiperWithParams.scss";
 import { Autoplay, Pagination } from 'swiper/dist/js/swiper.esm'
 
 const SimpleSwiperWithParams = props => {
   const { data } = props
-  console.log(data)
+  console.log(data);
   const params = {
     modules: [Autoplay, Pagination],
     autoplay: {
@@ -25,18 +27,21 @@ const SimpleSwiperWithParams = props => {
   }
 
   const createSlide = list => {
-    let div = []
-    list.forEach(i => {
-      div.push(<div><img alt={i.name} className="swiper-img" src={i.image_src} key={i.promo_id}></img></div>)
-    })
-    return div
-  }
+    return list.map(item =>
+      <div key={item.promo_id}>
+        <img src={item.image_src} alt={item.name} />
+      </div>
+    );
+  };
 
   return (
-    <Swiper {...params}>
-      {createSlide(data)}
-      {/* <img src={data[0].image_src} alt=""/> */}
-    </Swiper>
+    <>
+      <div className="SimpleSwiperWithParams">
+        <Swiper {...params}>
+          {createSlide(data)}
+        </Swiper>
+      </div>
+    </>
   )
 }
 

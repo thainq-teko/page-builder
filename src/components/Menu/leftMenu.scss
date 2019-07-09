@@ -1,0 +1,25 @@
+.backdrop {
+
+  &:hover {
+    color: red;
+    border: 1px solid black;
+  }
+}
+
+.filter {
+  border: 1px solid black;
+  .label {
+    font-size: 20px;
+    padding: 10px 0 10px 20px;
+  }
+  .cell {
+    width: calc((100% - 140px)/5);
+    display: inline-block;
+    padding: 0px 0px 20px 20px;
+  }
+  .cell-button {
+    max-width: 90px;
+    display: inline-block;
+    padding: 0px 0px 20px 20px;
+  }
+}
