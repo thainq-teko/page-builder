@@ -1,0 +1,16 @@
+.box {
+  border: 1px solid black;
+  position: relative;
+
+  .label {
+    padding: 20px;
+    display: inline-block;
+    padding-right: 50%;
+  }
+
+  .paging {
+    position: absolute;
+    top: 20px;
+    display: inline-block;
+  }
+}
