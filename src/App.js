@@ -3,11 +3,9 @@ import './App.css';
 // eslint-disable-next-line
 import SimpleSwiperWithParams from 'components/SimpleSwiperWithParams';
 import LeftMenu from 'components/Menu';
-import ProductList from 'components/ProductList';
 import axios from 'axios';
 import 'antd/dist/antd.css';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 function App() {
   // eslint-disable-next-line

@@ -1,7 +1,7 @@
 import React from 'react';
 import './leftMenu.scss'
 import { Input, Button, Select } from 'antd';
-import ProductList from 'components/ProductList'
+import ProductTable from 'components/ProductTable'
 const { Option } = Select;
 
 const LeftMenu = props => {
@@ -44,7 +44,7 @@ const LeftMenu = props => {
         </div>
       </div>
       <br />
-      <ProductList />
+      <ProductTable />
     </div>
   )
 }
