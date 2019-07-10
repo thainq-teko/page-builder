@@ -1,17 +1,23 @@
-import { Button } from 'antd';
 import React from 'react'
+import { Button } from 'antd';
 
 
-export const Pagination = {
+export const paginationConfig = {
   position: 'top',
+  pageSize: 5
 }
 
-export const Columns = [
+// let auto_increase = {
+//   id : 1
+// }
+
+export const columnsConfig = [
   {
     title: 'STT',
     dataIndex: 'key',
     key: 'key',
     align: 'center',
+    // render: text => auto_increase.id = parseInt(auto_increase.id) + +1
   },
   {
     title: 'ID',

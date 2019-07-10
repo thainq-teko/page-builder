@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Table } from 'antd';
+import { Table, Select } from 'antd';
 import { URL } from 'services/repository/url.local.js'
-import { Pagination, Columns } from 'components/configTable/configTable'
-
+import { paginationConfig, columnsConfig } from 'components/configTable/configTable'
 import './ProductTable.scss'
 
-
 const initData = URL.data;
-
+const { Option } = Select;
 
 const ProductTable = props => {
   const [data, setData] = useState([])
+  const [pagination, setPagination] = useState(paginationConfig)
   useEffect(() => {
     setData(initData)
   }, [])
+  const handleRangeSelect = value => {
+    setPagination({ ...pagination, pageSize: parseInt(value) });
+  }
+  console.log(pagination)
   return (
     <>
       <div className="box">
@@ -21,8 +24,16 @@ const ProductTable = props => {
           Danh sách URL
         </div>
         <div className="table_product">
-          {data.length ? <Table bordered pagination={Pagination} columns={Columns} dataSource={data} />
-            : <Table bordered pagination={Pagination} columns={Columns} data={[]} />}
+          <div className="">
+            <span>Xem </span>
+            <Select defaultValue="5" onChange={handleRangeSelect}>
+              <Option value="5">5</Option>
+              <Option value="7">7</Option>
+              <Option value="10">10</Option>
+            </Select>
+            <span> dòng/ trang</span>
+          </div>
+          <Table bordered pagination={pagination} columns={columnsConfig} dataSource={data} />
         </div>
       </div>
     </>

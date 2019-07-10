@@ -25,7 +25,7 @@ const LeftMenu = props => {
           />
         </div>
         <div className="cell">
-          <Select showArrow={true} placeholder="Loại" defaultValue="Chọn Loại" style={{ width: '100%' }}>
+          <Select showArrow={true} defaultValue="Chọn Loại" style={{ width: '100%' }}>
             <Option value="Chọn Loại">Chọn Loại</Option>
             <Option value="Listing">Listing</Option>
           </Select>
@@ -45,6 +45,8 @@ const LeftMenu = props => {
       </div>
       <br />
       <ProductTable />
+      <br />
+      <br />
     </div>
   )
 }

@@ -9,7 +9,12 @@
   }
   
   .table_product {
+    position: relative;
     padding: 20px;
     padding-top: 0px;
+    .range {
+      position: absolute;
+      left: 50%;
+    }
   }
 }
