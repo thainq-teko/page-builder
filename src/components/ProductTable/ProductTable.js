@@ -16,7 +16,6 @@ const ProductTable = props => {
   const handleRangeSelect = value => {
     setPagination({ ...pagination, pageSize: parseInt(value) });
   }
-  console.log(pagination)
   return (
     <>
       <div className="box">

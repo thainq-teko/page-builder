@@ -4,7 +4,9 @@ import { Button } from 'antd';
 
 export const paginationConfig = {
   position: 'top',
-  pageSize: 5
+  pageSize: 5,
+  showSizeChanger: true,
+  pageSizeOptions: ['5','7','10']
 }
 
 // let auto_increase = {
