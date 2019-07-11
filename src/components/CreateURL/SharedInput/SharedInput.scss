@@ -1,0 +1,18 @@
+.sharedInput {
+  margin: 5px 0px;
+  width: 100%;
+  display: flex;
+  .sharedInputLabel {
+    display: block;
+    width: 20%;
+    float: left;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 5px;
+  }
+  .sharedInputCell {
+    display: block;
+    width: 60%;
+    float: left;
+  }
+}

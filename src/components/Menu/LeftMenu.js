@@ -5,6 +5,9 @@ import ProductTable from 'components/ProductTable'
 const { Option } = Select;
 
 const LeftMenu = props => {
+  const handleFilter = () => {
+    props.history.push('/create')
+  }
   return (
     <div style={{'padding': '0px 20px'}}>
       <div className="filter">
@@ -38,7 +41,7 @@ const LeftMenu = props => {
           </Select>
         </div>
         <div className="cell-button">
-          <Button type="primary">
+          <Button type="primary" onClick={() => handleFilter()}>
             Tìm kiếm
           </Button>
         </div>
