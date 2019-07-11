@@ -19,7 +19,6 @@ export const columnsConfig = [
     dataIndex: 'key',
     key: 'key',
     align: 'center',
-    // render: text => auto_increase.id = parseInt(auto_increase.id) + +1
   },
   {
     title: 'ID',
